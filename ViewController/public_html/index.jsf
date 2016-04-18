@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="untitled2.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        
+                        <af:link text="Date Service" id="l2" action="currentDate"/>
+
+                        
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <af:panelSplitter orientation="horizontal" splitterPosition="713" positionedFromEnd="true"
+                                          id="ps1">
+                            <f:facet name="first">
+                                <!-- Content -->
+                                <af:panelGroupLayout id="pgl2">
+                                    <af:panelHeader text="Orders" id="ph1">
+                                        <af:table id="md1" rows="#{bindings.Orders.rangeSize}"
+                                                  fetchSize="#{bindings.Orders.rangeSize}"
+                                                  emptyText="#{bindings.Orders.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  var="row" value="#{bindings.Orders.collectionModel}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.Orders.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.Orders.collectionModel.makeCurrent}"
+                                                  rowSelection="single">
+                                            <af:column headerText="#{bindings.Orders.hints.Id.label}"
+                                                       sortProperty="#{bindings.Orders.hints.Id.name}" sortable="false"
+                                                       id="c1">
+                                                <af:outputText value="#{row.Id}"
+                                                               shortDesc="#{bindings.Orders.hints.Id.tooltip}" id="ot1">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Orders.hints.Id.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.Orders.hints.Customeraddress.label}"
+                                                       sortProperty="#{bindings.Orders.hints.Customeraddress.name}"
+                                                       sortable="false" id="c2">
+                                                <af:outputText value="#{row.Customeraddress}"
+                                                               shortDesc="#{bindings.Orders.hints.Customeraddress.tooltip}"
+                                                               id="ot2"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.Orders.hints.Customername.label}"
+                                                       sortProperty="#{bindings.Orders.hints.Customername.name}"
+                                                       sortable="false" id="c3">
+                                                <af:outputText value="#{row.Customername}"
+                                                               shortDesc="#{bindings.Orders.hints.Customername.tooltip}"
+                                                               id="ot3"/>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.Orders.hints.Createdate.label}"
+                                                       sortProperty="#{bindings.Orders.hints.Createdate.name}"
+                                                       sortable="false" id="c4">
+                                                <af:outputText value="#{row.Createdate}"
+                                                               shortDesc="#{bindings.Orders.hints.Createdate.tooltip}"
+                                                               id="ot4">
+                                                    <af:convertDateTime pattern="#{bindings.Orders.hints.Createdate.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column headerText="#{bindings.Orders.hints.Ordertotal.label}"
+                                                       sortProperty="#{bindings.Orders.hints.Ordertotal.name}"
+                                                       sortable="false" id="c5">
+                                                <af:outputText value="#{row.Ordertotal}"
+                                                               shortDesc="#{bindings.Orders.hints.Ordertotal.tooltip}"
+                                                               id="ot5">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.Orders.hints.Ordertotal.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelHeader>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="second">
+                                <!-- Right -->
+                                <af:panelHeader text="OrderItems" id="ph2">
+                                    <af:table rows="#{bindings.OrderItems.rangeSize}"
+                                              fetchSize="#{bindings.OrderItems.rangeSize}"
+                                              emptyText="#{bindings.OrderItems.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              var="row" value="#{bindings.OrderItems.collectionModel}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.OrderItems.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.OrderItems.collectionModel.makeCurrent}"
+                                              rowSelection="single" id="t1">
+                                        <af:column headerText="#{bindings.OrderItems.hints.Seqnum.label}"
+                                                   sortProperty="#{bindings.OrderItems.hints.Seqnum.name}"
+                                                   sortable="false" id="c6">
+                                            <af:outputText value="#{row.Seqnum}"
+                                                           shortDesc="#{bindings.OrderItems.hints.Seqnum.tooltip}"
+                                                           id="ot6">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OrderItems.hints.Seqnum.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OrderItems.hints.Name.label}"
+                                                   sortProperty="#{bindings.OrderItems.hints.Name.name}"
+                                                   sortable="false" id="c7">
+                                            <af:outputText value="#{row.Name}"
+                                                           shortDesc="#{bindings.OrderItems.hints.Name.tooltip}"
+                                                           id="ot7"/>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OrderItems.hints.Quantity.label}"
+                                                   sortProperty="#{bindings.OrderItems.hints.Quantity.name}"
+                                                   sortable="false" id="c8">
+                                            <af:outputText value="#{row.Quantity}"
+                                                           shortDesc="#{bindings.OrderItems.hints.Quantity.tooltip}"
+                                                           id="ot8">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OrderItems.hints.Quantity.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OrderItems.hints.Serial.label}"
+                                                   sortProperty="#{bindings.OrderItems.hints.Serial.name}"
+                                                   sortable="false" id="c9">
+                                            <af:outputText value="#{row.Serial}"
+                                                           shortDesc="#{bindings.OrderItems.hints.Serial.tooltip}"
+                                                           id="ot9"/>
+                                        </af:column>
+                                        <af:column headerText="#{bindings.OrderItems.hints.OrderId.label}"
+                                                   sortProperty="#{bindings.OrderItems.hints.OrderId.name}"
+                                                   sortable="false" id="c10">
+                                            <af:outputText value="#{row.OrderId}"
+                                                           shortDesc="#{bindings.OrderItems.hints.OrderId.tooltip}"
+                                                           id="ot10">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.OrderItems.hints.OrderId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelHeader>
+                            </f:facet>
+                        </af:panelSplitter>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<faces-config version="2.1" xmlns="http://java.sun.com/xml/ns/javaee">
+  <application>
+    <default-render-kit-id>oracle.adf.rich</default-render-kit-id>
+  </application>
+  <navigation-rule>
+    <from-view-id>/index.jsf</from-view-id>
+    <navigation-case>
+      <from-outcome>currentDate</from-outcome>
+      <to-view-id>/CurrentTime.jsf</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+  <navigation-rule>
+    <from-view-id>/CurrentTime.jsf</from-view-id>
+    <navigation-case>
+      <from-outcome>back</from-outcome>
+      <to-view-id>/index.jsf</to-view-id>
+    </navigation-case>
+  </navigation-rule>
+</faces-config>

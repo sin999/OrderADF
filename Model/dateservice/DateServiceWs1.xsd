@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:ns0="http://tempuri.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://tempuri.org/">
+  <xsd:complexType name="getDate"/>
+  <xsd:complexType name="getDateResponse">
+    <xsd:sequence>
+      <xsd:element name="return" type="xsd:dateTime" minOccurs="0"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:element name="getDate" type="ns0:getDate"/>
+  <xsd:element name="getDateResponse" type="ns0:getDateResponse"/>
+</xsd:schema>

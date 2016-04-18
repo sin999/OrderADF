@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="untitled2PageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="Orders" RangeSize="25" DataControl="OrderServiceDataControl" id="OrdersIterator"/>
+    <iterator Binds="OrderItems" RangeSize="25" DataControl="OrderServiceDataControl" id="OrderItemsIterator"/>
+    <variableIterator id="variables">
+      <variable Type="java.sql.Date" Name="getDate_Return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getDate.result}"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <tree IterBinding="OrdersIterator" id="Orders">
+      <nodeDefinition DefName="model.OrdersView" Name="Orders0">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Customeraddress"/>
+          <Item Value="Customername"/>
+          <Item Value="Createdate"/>
+          <Item Value="Ordertotal"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="OrderItemsIterator" id="OrderItems">
+      <nodeDefinition DefName="model.OrderItemView" Name="OrderItems0">
+        <AttrNames>
+          <Item Value="Seqnum"/>
+          <Item Value="Name"/>
+          <Item Value="Quantity"/>
+          <Item Value="Serial"/>
+          <Item Value="OrderId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="getDate" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getDate"
+                  IsViewObjectMethod="false" DataControl="DateService" InstanceName="data.DateService"
+                  ReturnName="data.DateService.methodResults.getDate_DateService_getDate_result"/>
+    <attributeValues IterBinding="variables" id="Return">
+      <AttrNames>
+        <Item Value="getDate_Return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

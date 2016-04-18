@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="CurrentTime.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">                      
+            <af:panelFormLayout id="pfl1">
+                <af:link text="Back" id="al3" action="back"/>
+                <af:link actionListener="#{bindings.getDate.execute}" text="getDate"
+                         disabled="#{!bindings.getDate.enabled}" id="l1"/>
+                <f:facet name="footer">
+                    <af:outputLabel value="#{bindings.Return}" id="ol1"/>
+                </f:facet>
+            </af:panelFormLayout>
+        </af:form>
+    </af:document>
+</f:view>

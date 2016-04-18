@@ -1,0 +1,54 @@
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+  <Reference name="Connection1" className="oracle.jdeveloper.db.adapter.DatabaseProvider"
+             credentialStoreKey="Connection1" xmlns="">
+    <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+    <RefAddresses>
+      <StringRefAddr addrType="oraDriverType">
+        <Contents>thin</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="hostname">
+        <Contents>localhost</Contents>
+      </StringRefAddr>
+      <SecureRefAddr addrType="password"/>
+      <StringRefAddr addrType="subtype">
+        <Contents>oraJDBC</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="port">
+        <Contents>1521</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="user">
+        <Contents>egar</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="sid">
+        <Contents>XE</Contents>
+      </StringRefAddr>
+    </RefAddresses>
+  </Reference>
+  <Reference name="DateService" className="oracle.adf.model.connection.webservice.impl.WebServiceConnectionImpl"
+             xmlns="">
+    <Factory className="oracle.adf.model.connection.webservice.api.WebServiceConnectionFactory"/>
+    <RefAddresses>
+      <XmlRefAddr addrType="WebServiceConnection">
+        <Contents>
+          <wsconnection description="http://127.0.0.1:7101/Model/DateServiceWs?wsdl"
+                        service="{http://tempuri.org/}DateServiceWs">
+            <model name="{http://tempuri.org/}DateServiceWs" xmlns="http://oracle.com/ws/model">
+              <service name="{http://tempuri.org/}DateServiceWs">
+                <port name="DateServiceWsPort" binding="{http://tempuri.org/}DateServiceWsPortBinding"
+                      portType="{http://tempuri.org/}DateServiceWs">
+                  <soap addressUrl="http://127.0.0.1:7101/Model/DateServiceWs"
+                        xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                  <operation name="getDate">
+                    <soap soapAction="" xmlns="http://schemas.xmlsoap.org/wsdl/soap/"/>
+                    <input name=""/>
+                    <output name=""/>
+                  </operation>
+                </port>
+              </service>
+            </model>
+          </wsconnection>
+        </Contents>
+      </XmlRefAddr>
+    </RefAddresses>
+  </Reference>
+</References>

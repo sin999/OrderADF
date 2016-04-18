@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.0.31" id="DataBindings"
+             SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <pageMap>
+    <page path="/index.jsf" usageId="view_untitled2PageDef"/>
+    <page path="/CurrentTime.jsf" usageId="view_CurrentTimePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="view_untitled2PageDef" path="view.pageDefs.untitled2PageDef"/>
+    <page id="view_CurrentTimePageDef" path="view.pageDefs.CurrentTimePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DateService" path="model.DateService"/>
+    <BC4JDataControl id="OrderServiceDataControl" Package="model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="OrderServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

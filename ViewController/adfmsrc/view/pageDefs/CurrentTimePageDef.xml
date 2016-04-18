@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.0.31" id="CurrentTimePageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.sql.Date" Name="getDate_Return" IsQueriable="false" IsUpdateable="0"
+                DefaultValue="${bindings.getDate.result}"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="getDate" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getDate"
+                  IsViewObjectMethod="false" DataControl="DateService" InstanceName="data.DateService"
+                  ReturnName="data.DateService.methodResults.getDate_DateService_getDate_result"/>
+    <attributeValues IterBinding="variables" id="Return">
+      <AttrNames>
+        <Item Value="getDate_Return"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

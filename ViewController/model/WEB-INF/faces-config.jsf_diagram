@@ -1,0 +1,51 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <Page
+      id="Page4">
+      <property
+         name="jspName">/CurrentTime.jsf</property>
+      <property
+         name="x">614.88184</property>
+      <property
+         name="y">250.44824</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <Page
+      id="Page5">
+      <property
+         name="jspName">/index.jsf</property>
+      <property
+         name="x">237.5</property>
+      <property
+         name="y">266.1494</property>
+      <property
+         name="wildcard">false</property>
+   </Page>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase7"
+      from="Page5"
+      to="Page4">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">currentDate</property>
+      <property
+         name="sdm:polyPoints">R50,278.5,265.79883,573.88184,250.09766,L50</property>
+   </NavigationCase>
+   <NavigationCase
+      islink="true"
+      id="NavigationCase8"
+      from="Page4"
+      to="Page5">
+      <property
+         name="description">Navigation Case</property>
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">L54,573.88184,253.59766,278.68597,269.29883,R54</property>
+   </NavigationCase>
+</SDM>
